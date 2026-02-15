@@ -1,0 +1,52 @@
+digraph LampFlow {
+
+    // Global attributs for all nodes
+    node [fontname="Arial", color="black"]
+
+    // Attributs for the start node
+    node [
+        label="Lamp doesn't work",
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#ffcccc"
+    ]
+    start
+
+    // Attributs for decisions
+    node [
+        shape=diamond,
+        style=filled,
+        fillcolor="#ffff99"
+    ]
+    plugged; bulb
+
+    // Attributs for actions
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#99ff99"
+    ]
+    plug_in; replace; repair
+
+    // Labels
+    start   [label="Lamp doesn't work"]
+    plugged [label="Lamp\nplugged in?"]
+    bulb    [label="Bulb\nburned out?"]
+    plug_in [label="Plug in lamp"]
+    replace [label="Replace bulb"]
+    repair  [label="Repair lamp"]
+
+    // Edges
+    start -> plugged
+    plugged -> bulb
+    bulb -> repair
+
+    plugged -> plug_in [minlen=2]
+    bulb -> replace    [minlen=2]
+
+    // Ranking for adjust layout
+    {rank=same; plugged; plug_in}
+    {rank=same; bulb; replace}
+}
+
+

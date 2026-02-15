@@ -1,0 +1,26 @@
+digraph {
+
+    // Atributos globais
+    graph [rankdir=LR, nodesep=0.5]
+    node [
+        shape = box,
+        style = "rounded,filled"
+        colorscheme = pastel17
+        fontname = Arial
+        margin = 0.2
+        color=white
+        ]
+    edge [colorscheme=pastel17, color=7, penwidth=3.0]
+
+    // Nós
+    0 [label="Real-world \n problem", fillcolor=1]
+    1 [label="Design \n Mathematical \n model", fillcolor=2]
+    2 [label="Solve, analyse \n and interpret", fillcolor=3]
+    3 [label="Predict and test", fillcolor=4]
+
+    // Ligações
+    0 -> 1 -> 2-> 3 -> 1
+
+    // Ranking
+    {rank=same; 2; 3}
+}

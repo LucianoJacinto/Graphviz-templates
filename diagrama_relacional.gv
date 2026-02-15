@@ -1,0 +1,41 @@
+graph {
+
+    // Atributos globais
+    graph [
+        layout = neato
+        overlap = true
+    ]
+
+    node [
+        shape = circle
+        width = 1.1
+        fixedsize = true
+        style = filled
+        fontname = "Arial"
+        fontsize = 12
+        color=white
+    ]
+    
+    edge [style=invis, len=1.0]
+
+    // Nó central
+    central [
+        label = "Diagramas"
+        width = 1.6
+        fixedsize = true
+        style = "filled"
+        fillcolor = "#ccccccaa"
+        fontsize = 14
+    ]
+  
+    // Nós satélites
+    1  [label="Nós", fillcolor="#ff9999aa"]
+    2  [label="Ligações", fillcolor="#99ddffaa"]
+    3  [label="Cores", fillcolor="#ffcc99aa"]
+    4  [label="Rótulos", fillcolor="#99ff99aa"]
+    5  [label="Setas", fillcolor="#9999ffaa"]
+    6  [label="Clusters", fillcolor="#ff9999aa"]
+
+    // Ligações invisíveis para posicionamento
+    central -- {1, 2, 3, 4, 5, 6}
+}

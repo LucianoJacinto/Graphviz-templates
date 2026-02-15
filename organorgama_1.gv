@@ -1,0 +1,32 @@
+graph Organograma {
+
+    // Atributos globais
+    node [
+        shape = box,
+        style = filled,
+        colorscheme = greens9,
+        color = white,
+        penwidth = 2,
+        fontname = "Arial",
+        margin = "0.4,0.2",
+    ]
+    edge [
+        colorscheme = greens9,
+        color = 9,
+        penwidth = 2.0,
+    ]
+
+    // Nós
+    CEO [label="CEO", fillcolor=7]
+
+    DTI [label="Diretor de TI", fillcolor=5]
+    DF  [label="Diretor Financeiro", fillcolor=5]
+    DRH [label="Diretor de RH", fillcolor=5]
+
+    GDev [label="Gerente de \n Desenvolvimeto", fillcolor=3]
+    GInfra [label="Gerente de \n Infraestrutura", fillcolor=3]
+
+    // Ligações
+    CEO -- {DTI DF, DRH}
+    DTI -- {GDev, GInfra}
+}

@@ -1,0 +1,28 @@
+digraph {
+
+    // Atributos globais
+    graph [rankdir=LR, nodesep=0.5]
+    node [
+        shape = box
+        style = "rounded,filled"
+        colorscheme = brbg5
+        fontname = Arial
+        color=black
+    ]
+    edge [colorscheme=brbg5, color=2, penwidth=3]
+
+    // Nós
+    1 [fillcolor=1, label="Start"]
+    2 [fillcolor=2, label="Validate"]
+    3 [fillcolor=3, label="Process"]
+    4 [fillcolor=4, label="Store"]
+    5 [fillcolor=5, label="Notify"]
+
+    // Ligações
+    1 -> 2 -> 3 -> 4 -> 5
+
+    // Ranking
+    {rank=same; 1; 2}
+    {rank=same; 4; 5} 
+}
+

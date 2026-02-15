@@ -1,0 +1,19 @@
+digraph {
+    
+    // Nós
+    node [fontname=Arial, shape=ellipse]
+    i [label="Ínicio"]
+    f [label="Fim"]
+
+    node [shape=box, margin=0.2]
+    1 [label="Definir o problema"]
+    2 [label="Definir as entradas \n e saídas"]
+    3 [label="Desenvolver \n o algoritmo"]
+    4 [label="Converter o algoritmo \n em instruções Python"]
+    5 [label="Testar o programa"]
+
+    // Ligações
+    edge [fontname=Arial, penwidth=2]
+    i -> 1 -> 2 -> 3 -> 4 -> 5 -> f
+    3 -> 3 [label="decompor, \n refinar"]
+}

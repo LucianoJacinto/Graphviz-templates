@@ -1,0 +1,44 @@
+digraph Flowchart {
+
+    // Atributos globais
+    graph [splines=ortho]
+    node  [fontname="Arial", color="black"]
+    edge  [fontname="Arial", arrowhead="normal"]
+
+    // Nós inicial e final
+    node [shape=box, style="rounded,filled", fillcolor="#ffb3b3"]
+    start; stop
+
+    // Nós de input e output
+    node [shape=parallelogram, style="filled", fillcolor="#bfc7ff"]
+    input; output
+
+    // Nós de processo
+    node [shape=box, fillcolor="#ffd9b3"]
+    p1; p2a; p2b
+
+    // Nós de decisão
+    node [shape=diamond, fillcolor="#b9ffb9", height=1]
+    d1 
+    
+    // Labels
+    input  [label="Input"]
+    p1     [label="Process 1"]
+    d1     [label="Decision 1"]
+    p2a    [label="Process 2a"]
+    output [label="Output"]
+    p2b    [label="Process 2b"]
+    stop   [label="Stop"]
+
+    // Ligações
+    start -> input -> p1 -> d1 [weight=5]
+
+    d1 -> p2a [label="yes"]
+    d1 -> p2b [xlabel="no", minlen=2.0]
+    p2b -> p1
+
+    p2a -> output -> stop
+    
+    // Rankings
+    {rank=same; d1; p2b}
+}

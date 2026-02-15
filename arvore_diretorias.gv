@@ -1,0 +1,24 @@
+digraph Diretoria {
+
+    // Atributos globais
+    graph [ rankdir=LR]
+    node [shape=folder
+        fontname="Helvetica"
+        color=white
+        style="filled"
+        colorscheme=rdylbu10
+        fillcolor=5
+        ]
+    
+    edge [colorscheme=rdylbu10, color=1, arrowhead=vee]
+
+    // Nos e ligações
+    "C:\\" -> {"Program Files" "Users" "Windows"}
+    "Program Files" -> {"App1" "App2"}
+    "Users" -> {"Alice" "Bob"}
+    "Alice" -> {"Documents" "Pictures" "Downloads"}
+    "Documents" -> {"Relatorios" "Projetos"}
+    "Projetos" -> {"ProjetoA" "ProjetoB"}
+    "Windows" -> {"System32" "Temp"}
+}
+

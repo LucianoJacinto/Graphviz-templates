@@ -1,0 +1,24 @@
+digraph Computador {
+
+    // Atributos globais
+    graph [rankdir=LR, nodesep=0.5]
+    node [fontname="Arial", shape=box]
+
+    // Nós
+    entrada [label="Dispositivos\nde entrada", style=rounded]
+    cpu     [label="CPU"]
+    mem_int [label="Memória\nInterna"]
+    mem_ext [label="Memória \n externa"]
+    saida   [label="Dispositivos \n de saída", style=rounded]
+
+    // Ligações
+    entrada -> cpu
+        cpu -> mem_int
+    mem_int -> cpu
+        cpu -> mem_ext
+    mem_ext -> cpu
+        cpu -> saida
+
+    // Ranking
+    {rank=same; cpu; mem_int; mem_ext}
+}
