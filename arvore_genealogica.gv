@@ -1,0 +1,99 @@
+graph ArvoreGenealogica {
+    
+    rankdir=BT
+
+    // Estilos globais para nós
+    node [
+        shape = box
+        style="filled,rounded"
+        colorscheme = greens9
+        color = white
+        fillcolor=8
+        fontname = "Arial"
+        fontcolor=white
+        // margin = "0.4,0.2"
+        ]
+    
+    // Parentescos
+    "Pais"; "Avós"; "Bisavós"; "Trisavós"
+
+    // Estilos para nós com os nomes dos familiares
+    node [
+        fillcolor=4
+        penwidth = 2
+        fontcolor = 9
+        ]
+
+    // Estilos para ligações
+    edge [
+        colorscheme = greens9
+        color = 9
+        penwidth = 2.0
+        ]
+    
+    "Pais" -- "Avós" -- "Bisavós" -- "Trisavós"
+
+    // Pais
+    {rank=same "Pais", p, m
+    p [label="Luís"]
+    m [label="Isabel"]}
+    "Rita / Manuel" -- {p, m}
+
+    // Avós
+    pp [label="João"]
+    mp [label="Cezalina"]
+    pm [label="António"]
+    mm [label="Maria"]
+
+    p -- {pp, mp}
+    m -- {pm, mm}
+
+    // Bisavós
+    ppp [label="José"]
+    mpp [label="Helena"]
+    pmp [label="Francisco"]
+    mmp [label="Beatriz"]
+    ppm [label="???"]
+    mpm [label="Paula"]
+    pmm [label="Joaquim"]
+    mmm [label="Joana"]
+    
+    pp -- {ppp, mpp}
+    mp -- {pmp, mmp}
+    pm -- {ppm, mpm}
+    mm -- {pmm, mmm}
+
+    // Trisavós
+    pppp [label="???"]
+    mppp [label="???"]
+    pmpp [label="???"]
+    mmpp [label="???"]
+    ppmp [label="???"]
+    mpmp [label="???"]
+    pmmp [label="???"]
+    mmmp [label="???"]
+    pppm [label="???"]
+    mppm [label="???"]
+    pmpm [label="???"]
+    mmpm [label="???"]
+    ppmm [label="???"]
+    mpmm [label="???"]
+    pmmm [label="???"]
+    mmmm [label="???"]
+
+    ppp -- {pppp, mppp}
+    mpp -- {pmpp, mmpp}
+    pmp -- {ppmp, mpmp}
+    mmp -- {pmmp, mmmp}
+    ppm -- {pppm, mppm}
+    mpm -- {pmpm, mmpm}
+    pmm -- {ppmm, mpmm}
+    mmm -- {pmmm, mmmm}
+}
+
+
+
+
+
+
+
