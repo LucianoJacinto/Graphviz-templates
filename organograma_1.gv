@@ -27,6 +27,6 @@ graph Organograma {
     GInfra [label="Gerente de \n Infraestrutura", fillcolor=3]
 
     // Ligações
-    CEO -- {DTI DF, DRH}
+    CEO -- {DTI, DF, DRH}
     DTI -- {GDev, GInfra}
 }
