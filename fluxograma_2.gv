@@ -2,7 +2,7 @@ digraph {
     
     // Nós
     node [fontname=Arial, shape=ellipse]
-    i [label="Ínicio"]
+    i [label="Início"]
     f [label="Fim"]
 
     node [shape=box, margin=0.2]
